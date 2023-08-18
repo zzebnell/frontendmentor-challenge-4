@@ -1,0 +1,137 @@
+:root {
+   --orange: hsl(31, 77%, 52%);
+   --cyan: hsl(184, 100%, 22%);
+   --dark-cyan: hsl(179, 100%, 13%);
+   --ligth-gray: hsl(0, 0%, 95%); 
+   --transparent-white: hsla(0, 0%, 100%, 0.75);
+
+   --lexend: 'Lexend Deca', sans-serif;
+   --shoulders: 'Big Shoulders Display', cursive;   
+}
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+   background: var(--ligth-gray);
+}
+
+#container {
+   width: 100%;
+   height: 100vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+#card-container {
+   width: 60%;
+   display: flex;
+}
+
+.card {
+   flex: 1;
+   flex-direction: column;
+   height: 500px;
+   padding: 45px;
+}
+
+.card > h2 {
+   font-family: var(--shoulders);
+   text-transform: uppercase;
+   font-weight: 700;
+   color: var(--ligth-gray);
+   font-size: 2.5em;
+   margin: 30px 0;
+}
+
+.card > button {
+   font-family: var(--lexend);
+   font-weight: 700;
+   background: var(--ligth-gray);
+   border: none;
+   color: inherit;
+   padding: 15px 35px;
+   border-radius: 30px;
+   transition: all 0.15s 0s ease-in-out;
+}
+
+.card button:hover {
+   cursor: pointer;
+   outline: 3px solid var(--transparent-white);
+   color: var(--transparent-white);
+   background: transparent;
+}
+
+.card > p {
+   font-family: var(--lexend);
+   color: var(--transparent-white);
+   max-height: 150px;
+   /*margin-bottom: 85px;*/
+   margin-bottom: 38%;
+   font-size: 0.97em;
+   line-height: 25px;
+   overflow-y: auto;
+}
+
+.card:first-child {
+   border-radius: 10px 0 0 10px;
+}
+
+.card:last-child {
+   border-radius: 0 10px 10px 0;
+}
+
+.card:nth-child(1) {
+   background: var(--orange);
+   color: var(--orange);
+}
+
+.card:nth-child(2) {
+   background: var(--cyan);
+   color: var(--cyan);
+}
+
+.card:nth-child(3) {
+   background: var(--dark-cyan);
+   color: var(--dark-cyan);
+}
+
+@media (max-width: 1440px) {
+   #card-container {
+      width: 75%;
+   }
+}
+
+@media (max-width: 1015px) {
+   #card-container {
+      width: 85%;
+   }
+}
+
+@media (max-width: 720px) {
+   #container {
+      height: 10%;
+      padding: 20% 0;
+   }
+
+   #card-container {
+      width: 90%;
+      flex-direction: column;
+   }
+
+   .card > p {
+      margin-bottom: 30px;
+   }
+
+   .card:first-child {
+      border-radius: 10px 10px 0 0;
+   }
+
+   .card:last-child {
+      border-radius: 0 0 10px 10px;
+   }
+}
